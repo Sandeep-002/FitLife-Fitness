@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FitLife Onboarding</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="screen" id="screen-welcome">
+      <h1>Welcome to FitLife</h1>
+      <p>Your personalized fitness journey starts here.</p>
+      <button onclick="goTo('screen-goal')">Get Started</button>
+    </div>
+
+    <div class="screen hidden" id="screen-goal">
+      <h2>Select Your Goal</h2>
+      <select id="goal">
+        <option>Lose Weight</option>
+        <option>Build Muscle</option>
+        <option>Improve Sleep</option>
+        <option>Stay Active</option>
+      </select>
+      <button onclick="goTo('screen-schedule')">Next</button>
+    </div>
+
+    <div class="screen hidden" id="screen-schedule">
+      <h2>What's Your Weekly Availability?</h2>
+      <input type="range" min="1" max="7" value="3" id="days" />
+      <p id="daysLabel">3 days/week</p>
+      <button onclick="goTo('screen-summary')">Next</button>
+    </div>
+
+    <div class="screen hidden" id="screen-summary">
+      <h2>You're All Set!</h2>
+      <p>Goal: <span id="goalSummary"></span></p>
+      <p>Availability: <span id="daysSummary"></span> days/week</p>
+      <button onclick="alert('Let’s go!')">Start My Plan</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
